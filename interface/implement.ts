@@ -26,6 +26,6 @@ let myDocument: TextDocument = new TextDocument("Hello there, text.");
 let otherDocument = myDocument.createCopy();
 
 console.log(
-  "Contents of documents are equal: " + myDocument.contents ==
-    otherDocument.contents,
+  "Contents of documents are equal: " + (myDocument.contents ==
+    otherDocument.contents),
 );
