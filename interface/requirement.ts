@@ -19,7 +19,7 @@ class ItemRequirement implements Requirement<Item> {
     this.item = forItem;
   }
 
-  isMetBy(other: Item) {
+  isMetBy(other: Item): boolean {
     return other.name === this.item.name && other.count >= this.item.count;
   }
 }
@@ -31,15 +31,15 @@ class ItemCategoryRequirement implements Requirement<Item> {
     this.category = from;
   }
 
-  static fromItem(from: Item) {
+  static fromItem(from: Item): ItemCategoryRequirement {
     return new this(from.category);
   }
 
-  static fromCategory(from: ItemCategory) {
+  static fromCategory(from: ItemCategory): ItemCategoryRequirement {
     return new this(from);
   }
 
-  isMetBy(other: Item) {
+  isMetBy(other: Item): boolean {
     return other.category.name == this.category.name;
   }
 }
@@ -65,4 +65,9 @@ let requiredForestry: ItemCategoryRequirement =
     name: "Forestry",
   });
 
-console.log("Log Requirement Met: " + requiredLogs.isMetBy(logs) + "\nForestry Requirement Met: " + requiredForestry.isMetBy(logs));
+console.log(
+  "Log Requirement Met: " +
+    requiredLogs.isMetBy(logs) +
+    "\nForestry Requirement Met: " +
+    requiredForestry.isMetBy(logs),
+);
