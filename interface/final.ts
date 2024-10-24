@@ -1,11 +1,11 @@
 interface Item {
-  name: string;
+  readonly name: string;
   count: number;
-  category: ItemCategory;
+  readonly category: ItemCategory;
 }
 
 interface ItemCategory {
-  name: string;
+  readonly name: string;
 }
 
 interface Requirement<T> {
