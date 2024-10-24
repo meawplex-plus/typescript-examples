@@ -1,3 +1,6 @@
+// This example is the culmination of all of the other examples in the interface folder.
+// See if you can understand what it does, and guess what the final output will be.
+
 interface Item {
   readonly name: string;
   count: number;
